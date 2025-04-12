@@ -8,18 +8,13 @@ from fpdf import FPDF
 from tensorflow.keras.preprocessing import image as keras_image
 import os
 
-# ✅ Set page config FIRST before any other Streamlit commands
-st.set_page_config(page_title="Heritage Damage Classifier", layout="centered")
-
 # Load models
 @st.cache_resource
 def load_models():
-    damage_model = tf.keras.models.load_model("/content/drive/MyDrive/models/final_damage_detection_model.h5")
-    enhancer_model = tf.keras.models.load_model("/content/drive/MyDrive/models/zero_dce_tf_model.h5")
-    defect_model = tf.keras.models.load_model("/content/drive/MyDrive/models/final_defect_classification_model.h5")
+    damage_model = tf.keras.models.load_model("models/final_damage_detection_model.h5")
+    enhancer_model = tf.keras.models.load_model("models/zero_dce_tf_model.h5")
+    defect_model = tf.keras.models.load_model("models/final_defect_classification_model.h5")
     return damage_model, enhancer_model, defect_model
-    
-
 damage_model, enhancer_model, defect_model = load_models()
 
 # Class names
