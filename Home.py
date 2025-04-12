@@ -30,7 +30,7 @@ def set_bg_image(image_file):
         st.markdown(css, unsafe_allow_html=True)
 
 # Set the uploaded background image
-set_bg_image("background.jpg")
+set_bg_image("assets/background.jpg")
 
 # Centered "Let's Detect" button
 st.markdown("<div class='custom-button'>", unsafe_allow_html=True)
